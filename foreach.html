@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Arrays</h2>
+
+    <p>Array.forEach() calls a function for each array element.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+        let text = "<ul>";
+        fruits.forEach(myFunction);
+        // let text = "<ul>";
+        //fruits.forEach(function (value) {
+        //text += "<li>" + value + "</li>";
+        //});
+        text += "</ul>";
+        document.getElementById("demo").innerHTML = text;
+
+        function myFunction(value) {
+        text += "<li>" + value + "</li>";
+        } 
+        // 1. text=<ul>
+        // 2. text=text(<ul>)+(<li>value</li>) => <ul>+<li>value</li>
+        // 3. text=text(<ul>+<li>value</li>)+</ul> => <ul>+<li>value</li></ul>
+        // value를 foreach하지 text+(<li>value</li>) 전체를 반복하라는 것이 아님.(value만 값이 변함)
+        // <ul><li>value(값 바뀌는 중)</li><ul>
+        // 따라서 2는 text=text(<ul>)+(<li>value1</li>(+)<li>value2</li>(+)<li>value3</li>...)이 된다.
+
+    </script>   
+</body>
+</html>
